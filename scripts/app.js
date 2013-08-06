@@ -16,7 +16,7 @@ define(['app/Map'], function(Map) {
     if ( animFrame !== null ) {
         
         var canvas = window.document.getElementById('canvas'),
-            globalContext = canvas.getContext('2d'),
+            context2d = canvas.getContext('2d'),
             isMozilla = false; // $.browser.mozilla is deprecated in jQuery 2.0.0
 
         if ( isMozilla ) {
@@ -68,7 +68,10 @@ define(['app/Map'], function(Map) {
 
     var map = new Map;
     // initialization
-    map.init({});
+    map.init({
+      context2d: context2d
+    });
+    map.draw();
     console.log(map);
 
     // update
