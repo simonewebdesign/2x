@@ -2,3 +2,9 @@ body {
   background-color: black;
   color: white;
 }
+
+canvas {
+  width: 240px;
+  height: 320px;
+  background-color: #333;
+}
