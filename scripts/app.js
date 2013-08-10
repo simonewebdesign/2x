@@ -7,7 +7,7 @@ define(['app/Map'], function(Map) {
     };
 
     var animFrame = window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame  ||
             window.mozRequestAnimationFrame ||
             window.oRequestAnimationFrame ||
             window.msRequestAnimationFrame ||
@@ -66,13 +66,15 @@ define(['app/Map'], function(Map) {
         }
     };
 
+    context2d.mozImageSmoothingEnabled = false;
+
     var map = new Map;
     // initialization
     map.init({
       context2d: context2d
     });
     map.draw();
-    console.log(map);
+    //console.log(map);
 
     // update
     function updateGame() {
